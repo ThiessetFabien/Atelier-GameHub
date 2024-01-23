@@ -26,11 +26,11 @@ app.get( '/game/:game', (req,res) => {
   const game = req.params.game;
   // On recherche dans games.json si le nom du jeu est le même que celui de la constante game
   // On retourne le résultat dans la constante isGame
-  const isGame = games.find(foundGame => foundGame.name === game);
+  const launchedGame = games.find(foundGame => foundGame.name === game);
   // si isGame est égalue à true
-  if (isGame) {
+  if (launchedGame) {
     // on retourne la page du jeu
-    res.render(game, {games, game});
+    res.render(game, {games, launchedGame});
   } else {
     // sinon on retourne une page erreur 404
     res.sendStatus(404);

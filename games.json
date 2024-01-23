@@ -10,5 +10,11 @@
     "title": "Dice Roller",
     "cssFile": "diceRoller.css",
     "jsFile": "diceRoller.js"
+  },
+  {
+    "name": "invader",
+    "title": "Invader",
+    "cssFile": "invader.css",
+    "jsFile": "invader.js"
   }
 ]

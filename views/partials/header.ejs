@@ -5,12 +5,12 @@
     <meta charset="UTF-8">
     <title>GameHub</title>
     <link rel="stylesheet" href="/css/style.css">
-    <!--  si le type de la variable jeu est différent d'"undefined" 
-          et si le nom du jeu est "diceRoller"
+    <!--  si le type de jeu est différent d'"undefined" 
+          et si le cssFile de l'objet lauchedGame n'est pas null
     -->
-    <% if (typeof locals.game !== "undefined" && locals.game === "diceRoller") { %>
-      <!-- alors on renvoi le lien du css de diceRoller -->
-      <%- `<link rel="stylesheet" href="/css/diceRoller.css">` %>
+    <% if (typeof launchedGame !== "undefined" && launchedGame.cssFile !== null) { %>
+      <!-- alors on renvoi le lien du css en fonction du nom du jeu-->
+      <%- `<link rel="stylesheet" href="/css/${launchedGame.cssFile}">` %>
     <% } %>
   </head>
 
