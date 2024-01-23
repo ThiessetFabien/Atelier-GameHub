@@ -1,7 +1,7 @@
 // Objectif : identifier un nombre aléatoire comme au juste prix
 
 // 1. On peut définir la fourchette max
-var max = 500; 
+var max = 500;
 
 // 2. On génère un nombre aléatoire entre 0 et la fourchette max
 // on génère déjà un nombre décimal de 0 à 1
@@ -21,31 +21,32 @@ var attempt = 1;
 
 // 5. Tant que l'utilisateur n'a pas saisi le nombre exact on lui redemande
 while (enteredNumber !== searchedNumber) {
-    // si le joueur ne rentre rien ou clique sur "Annuler",
-    // parseInt va renvoyer NaN (not a number)
-    // => on quitte la boucle (abandon)
-    if ( isNaN(enteredNumber) ) {
-        break;
-    }
+  // si le joueur ne rentre rien ou clique sur "Annuler",
+  // parseInt va renvoyer NaN (not a number)
+  // => on quitte la boucle (abandon)
+  if (isNaN(enteredNumber)) {
+    break;
+  }
 
-    
-    // S'il a saisi un nombre plus petit on lui indique que c'est plus
-    if (enteredNumber < searchedNumber) {
-        enteredNumber = parseInt(prompt('C\'est plus'));
-    }
-    // S'il a saisi un nombre plus petit on lui indique que c'est moins
-    else {
-        enteredNumber = parseInt(prompt('C\'est moins'));
-    }
-    // On incrémente le nombre d'essais 
-    attempt += 1;
+  // S'il a saisi un nombre plus petit on lui indique que c'est plus
+  if (enteredNumber < searchedNumber) {
+    enteredNumber = parseInt(prompt('C\'est plus'));
+  }
+  // S'il a saisi un nombre plus petit on lui indique que c'est moins
+  else {
+    enteredNumber = parseInt(prompt('C\'est moins'));
+  }
+  // On incrémente le nombre d'essais
+  attempt += 1;
 }
 
 // 6. On sort de la boucle, c'est donc que le nombre entré est le bon, ou que le joueur a abandonné.
 if (enteredNumber == searchedNumber) {
-    // on prévient l'utilisateur qu'il a gagné
-    alert('Bravo ! C\'était bien ' + searchedNumber + ' - Nombre d\'essais : ' + attempt);
+  // on prévient l'utilisateur qu'il a gagné
+  alert(
+    'Bravo ! C\'était bien ' + searchedNumber + ' - Nombre d\'essais : ' + attempt
+  );
 } else {
-    // on prévient l'utilisateur qu'il a abandonné
-    alert('Abandon après ' + attempt + ' essais. Dommage !');
+  // on prévient l'utilisateur qu'il a abandonné
+  alert('Abandon après ' + attempt + ' essais. Dommage !');
 }

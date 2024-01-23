@@ -5,7 +5,11 @@
     <meta charset="UTF-8">
     <title>GameHub</title>
     <link rel="stylesheet" href="/css/style.css">
+    <!--  si le type de la variable jeu est différent d'"undefined" 
+          et si le nom du jeu est "diceRoller"
+    -->
     <% if (typeof locals.game !== "undefined" && locals.game === "diceRoller") { %>
+      <!-- alors on renvoi le lien du css de diceRoller -->
       <%- `<link rel="stylesheet" href="/css/diceRoller.css">` %>
     <% } %>
   </head>
@@ -16,11 +20,12 @@
       <nav>
         <ul>
           <li><a href="/">Accueil</a></li>
+          <!-- pour chaque jeu de l'objet games.json
+              on intègre le nom du jeu au lien
+              puis pour chaque url, on indique ce nom entre les balises-->
           <% for (game of games) { %>
             <%- `<li><a href="/game/${game.name}">${game.title}</a></li>` %><%
           } %>
         </ul>
       </nav>
     </header>
-
-
