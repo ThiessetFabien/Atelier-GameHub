@@ -13,6 +13,9 @@
       <nav>
         <ul>
           <li><a href="/">Accueil</a></li>
+          <% for (game of games) { %>
+            <%- `<li><a href="${game.name}">${game.title}</a></li>` %><%
+          } %>
         </ul>
       </nav>
     </header>
@@ -23,3 +26,4 @@
   </body>
 
 </html>
+
