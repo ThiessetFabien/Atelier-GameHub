@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+  <head>
+    <meta charset="UTF-8">
+    <title>GameHub</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <% if (typeof locals.game !== "undefined" && locals.game === "diceRoller") { %>
+      <%- `<link rel="stylesheet" href="/css/diceRoller.css">` %>
+    <% } %>
+  </head>
+
+  <body>
+    <header>
+      <h1>GameHub</h1>
+      <nav>
+        <ul>
+          <li><a href="/">Accueil</a></li>
+          <% for (game of games) { %>
+            <%- `<li><a href="/game/${game.name}">${game.title}</a></li>` %><%
+          } %>
+        </ul>
+      </nav>
+    </header>
+
+

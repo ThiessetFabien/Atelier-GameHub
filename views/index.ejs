@@ -1,24 +1,4 @@
-<!DOCTYPE html>
-<html lang="fr">
-
-  <head>
-    <meta charset="UTF-8">
-    <title>GameHub</title>
-    <link rel="stylesheet" href="/css/style.css">
-  </head>
-
-  <body>
-    <header>
-      <h1>GameHub</h1>
-      <nav>
-        <ul>
-          <li><a href="/">Accueil</a></li>
-          <% for (game of games) { %>
-            <%- `<li><a href="${game.name}">${game.title}</a></li>` %><%
-          } %>
-        </ul>
-      </nav>
-    </header>
+<%- include('../partials/header') %>
 
     <main>
       <h3>Index</h3>
